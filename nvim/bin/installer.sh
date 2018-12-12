@@ -1,4 +1,4 @@
-#!bin/bash
+
 
 echo "##### setup neovim #####"
 
@@ -7,15 +7,16 @@ if test -z $(which brew); then
   brew install caskroom/cask/brew-cask
 fi
 
+bash ./nvim/bin/font-installer.sh
+
 echo "----- install neovim -----"
 if [ -z $(which nvim) ]; then
   brew install neovim
 fi
-if [ -z $(which pip3) ]; then
-  brew install python3
-  pip3 install neovim
+if [ -z $(which pip) ]; then
+  pip install neovim
 else
-  pip3 install neovim --upgrade
+  pip install neovim --upgrade
 fi
 
 bash ./nvim/bin/dependency-installer.sh
