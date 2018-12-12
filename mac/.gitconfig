@@ -1,0 +1,12 @@
+[user]
+	name = PiroHiroPiro
+	email = hirohiro11071107@gmail.com
+[ghq]
+	root = ~/go/src/
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = nvim -c \"set fenc=utf-8\"
+[alias]
+    ignore = !"f() { local s=$1; shift; \
+             while [ $# -gt 0 ]; do s=\"$s,$1\"; shift; done;\
+             curl \"https://www.gitignore.io/api/$s\"; }; f"

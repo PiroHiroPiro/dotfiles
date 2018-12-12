@@ -1,0 +1,31 @@
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+  let g:airline_theme='bubblegum'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#branch#enabled = 0
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#readonly#enabled = 0
+  let g:airline_section_c = ''
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'MarSoft/nerdtree-grep-plugin'
+
+[[plugins]] # color schema
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  colorscheme hybrid
+  set background=dark
+'''
+
+[[plugins]]

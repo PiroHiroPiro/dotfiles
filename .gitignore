@@ -1,0 +1,29 @@
+# https://qiita.com/Hi-king/items/a8485557095692f1bf13
+## .gitignore ##
+# ignore all
+*
+!*/
+
+nvim/.config/dein/.cache/
+nvim/.config/dein/repos/
+
+# allow
+!Makefile
+!README.md
+!.gitignore
+!bin/*.sh
+
+!nvim/bin/*.sh
+!nvim/.config/nvim/init.vim
+!nvim/.config/nvim/dein.toml
+
+!fish/bin/*.sh
+!fish/.config/fish/config.fish
+!fish/.config/fish/functions/*.fish
+
+!mac/bin/*.sh
+!mac/.bashrc
+!mac/.bash_profile
+!mac/.gitconfig
+!mac/.gitignore_global
+!mac/.vimrc
