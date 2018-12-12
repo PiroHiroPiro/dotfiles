@@ -1,10 +1,5 @@
 # dotfiles
-Set up for
-- Mac Apps
-- git env
-- fish
-- neovim
-- anyenv
+現状g-hyogaのコピー．．．
 
 ## Setup
 ```
