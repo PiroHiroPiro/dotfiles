@@ -1,9 +1,5 @@
 #!bin/bash
 
-echo "##### install xcode command line tools ######"
-
-xcode-select --install
-
 echo "##### link git setting files ######"
 
 LINK_FILES=(.gitconfig .gitignore_global)

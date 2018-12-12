@@ -1,13 +1,18 @@
 # dotfiles
 Set up for
 - Mac Apps
-- git
+- git env
 - fish
-- bash
 - neovim
 - anyenv
 
-
+## Setup
+```
+$ xcode-select --install
+$ git clone https://github.com/PiroHiroPiro/dotfiles.git
+$ cd dotfiles
+$ make init
+```
 
 ## References
 - [g-hyoga/dotfiles](https://github.com/g-hyoga/dotfiles)

@@ -21,7 +21,7 @@ terminal: ## setup terminal setting
 git: ## setup gitconfig and so on...
 	bash ./mac/bin/git-setup.sh
 
-env: git ## install dev env
+env: ## install dev env
 	bash ./mac/bin/env-installer.sh
 
 health: ## check whether my dotfiles are linked
