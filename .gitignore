@@ -23,6 +23,7 @@ nvim/.config/dein/repos/
 
 !mac/bin/*.sh
 !mac/.bashrc
+!mac/.bash_aliases
 !mac/.bash_profile
 !mac/.gitconfig
 !mac/.gitignore_global

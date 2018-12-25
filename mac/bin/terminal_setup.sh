@@ -2,7 +2,7 @@
 
 echo "##### link terminal setting files ######"
 
-LINK_FILES=(.bash_profile .bashrc)
+LINK_FILES=(.bash_profile .bashrc .bash_aliases)
 
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
