@@ -1,7 +1,7 @@
-.PHONY: help nvim fish mac
+.PHONY: help nvim fish app
 .DEFAULT_GOAL := help
 
-init: fish mac terminal git env nvim ## setup and install all
+init: fish app terminal git env nvim macos ## setup and install all
 
 clean: ## delete auto created file and directory
 	rm -rf ~/langserver
@@ -12,8 +12,11 @@ nvim: env ## install and setup neovim
 fish: ## install and setup fish
 	bash ./fish/bin/installer.sh
 
-mac: ## install mac app
+app: ## install mac app
 	bash ./mac/bin/installer.sh
+
+macos: ## setip macos system
+	bash ./mac/bin/system_setup.sh
 
 terminal: ## setup terminal setting
 	bash ./mac/bin/terminal-setup.sh
