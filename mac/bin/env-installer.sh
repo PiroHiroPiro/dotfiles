@@ -8,6 +8,7 @@ if test -z $(which anyenv); then
   eval "$(anyenv init -)"
   mkdir -p $(anyenv root)/plugins
   git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+  git clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-git
 fi
 
 echo "##### install pyenv #####"
