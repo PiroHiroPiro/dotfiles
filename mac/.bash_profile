@@ -3,7 +3,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # go
-export GOPATH=~/go
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
 # anyenv
