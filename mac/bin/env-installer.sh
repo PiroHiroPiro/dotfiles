@@ -17,21 +17,10 @@ if test -z $(which pyenv); then
   anyenv install pyenv
 fi
 
-echo "##### setup pyenv #####"
+echo "##### install goenv #####"
 
-if test -z $(pyenv versions | grep 3.6.5 | wc -l); then
-  pyenv install 3.6.5
-fi
-
-if test -z $(pyenv versions | grep 2.7.12 | wc -l); then
-  pyenv install 2.7.12
-fi
-
-pyenv global 3.6.5 2.7.12
-pip install --upgrade pip
-
-if test -z $(pip freeze | grep pipenv | wc -l); then
-  pip install pipenv
+if test -z $(which goenv); then
+  anyenv install goenv
 fi
 
 echo "##### setup develop environment #####"
