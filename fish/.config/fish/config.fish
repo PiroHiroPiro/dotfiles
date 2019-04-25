@@ -33,6 +33,15 @@ end
 # anyenv
 set -x PATH $HOME/.anyenv/bin $PATH
 
+# pyenv
+set -x PATH $HOME/.anyenv/envs/pyenv/bin $PATH
+set -x PATH $HOME/.anyenv/envs/pyenv/shims $PATH
+status --is-interactive; and source (pyenv init -|psub)
+
+# goenv
+set -x PATH $HOME/.anyenv/envs/goenv/bin $PATH
+set -x PATH $HOME/.anyenv/envs/goenv/shims $PATH
+
 # go
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
