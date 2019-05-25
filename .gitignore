@@ -28,3 +28,4 @@ nvim/.config/dein/repos/
 !mac/.gitconfig
 !mac/.gitignore_global
 !mac/.vimrc
+!mac/.netrc
