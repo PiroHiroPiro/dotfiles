@@ -29,5 +29,7 @@ alias gs="git status"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 
+alias k="kubectl"
+
 # more alias for cd
 alias dev="cd ~/document/dev"
