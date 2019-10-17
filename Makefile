@@ -1,33 +1,41 @@
-.PHONY: help nvim fish app
+.PHONY: help init clean bash zsh fish git nvim tmux env mac health
 .DEFAULT_GOAL := help
 
-init: fish app terminal git env nvim macos ## setup and install all
+init: bash zsh git nvim tmux ## setup bash zsh git neovim tmux
 
-clean: ## delete auto created file and directory
+clean: ## uninstall and unlink files
+	bash ./zsh/bin/uninstaller.sh
+	bash ./fish/bin/uninstaller.sh
+	bash ./nvim/bin/uninstaller.sh
+	bash ./tmux/bin/uninstaller.sh
+	bash ./env/bin/uninstaller.sh
 	rm -rf ~/langserver
 
-nvim: env ## install and setup neovim
-	bash ./nvim/bin/installer.sh
+bash: ## setup bash
+	bash ./bash/bin/installer.sh
+
+zsh: ## install and setup zsh
+	bash ./zsh/bin/installer.sh
 
 fish: ## install and setup fish
 	bash ./fish/bin/installer.sh
 
-app: ## install mac app
-	bash ./mac/bin/installer.sh
+git: ## setup git
+	bash ./git/bin/installer.sh
 
-macos: ## setip macos system
+nvim: ## install and setup neovim
+	bash ./nvim/bin/installer.sh
+
+tmux: ## install and setup tmux
+	bash ./tmux/bin/installer.sh
+
+env: ## setup development environment
+	bash ./env/bin/installer.sh
+
+mac: ## setup system
 	bash ./mac/bin/system_setup.sh
 
-terminal: ## setup terminal setting
-	bash ./mac/bin/terminal-setup.sh
-
-git: ## setup gitconfig and so on...
-	bash ./mac/bin/git-setup.sh
-
-env: ## install dev env
-	bash ./mac/bin/env-installer.sh
-
-health: ## check whether my dotfiles are linked
+health: ## check whether dotfiles are linked
 	bash ./bin/check-health.sh
 
 help: ## show help to make

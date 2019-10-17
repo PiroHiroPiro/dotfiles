@@ -3,15 +3,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/hiroyuki/trial-my-terminal/.config/dein/./repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.config/dein/./repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/hiroyuki/trial-my-terminal/.config/dein/.')
-  call dein#begin('/Users/hiroyuki/trial-my-terminal/.config/dein/.')
+if dein#load_state('~/.config/dein/.')
+  call dein#begin('~/.config/dein/.')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/hiroyuki/trial-my-terminal/.config/dein/./repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.config/dein/./repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')

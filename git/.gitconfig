@@ -1,11 +1,9 @@
 [user]
-    name = PiroHiroPiro
-    email = hirohiro11071107@gmail.com
-[ghq]
-    root = ~/go/src/
+	name = PiroHiroPiro
+	email = hirohiro11071107@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
-    editor = nvim -c \"set fenc=utf-8\"
+	editor = vim
 [alias]
     ignore = !"f() { local s=$1; shift; \
         while [ $# -gt 0 ]; do s=\"$s,$1\"; shift; done;\

@@ -1,6 +1,6 @@
 #!bin/bash
 
-echo "##### setup macos #####"
+echo "##### setup macOS #####"
 
 ### System
 # Disable the sound effects on boot (起動音を消す)
@@ -57,6 +57,17 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -int 0
 defaults write com.apple.dock autohide -int 1
 # Wipe all app icons from the Dock （Dock に標準で入っている全てのアプリを消す、Finder とごみ箱は消えない）
 # defaults write com.apple.dock persistent-apps -array
+# USBやネットワークストレージに.DS_Storeファイルを作成しない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+# ボリュームマウント時に自動的にFinderを表示
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+# Show the ~/Library folder
+chflags nohidden ~/Library
+# Show the /Volumes folder
+sudo chflags nohidden /Volumes
 
 ### Reboot
 echo "Rebooting is necessary to reflect the setting."

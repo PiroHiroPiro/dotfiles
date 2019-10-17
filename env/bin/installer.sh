@@ -12,20 +12,12 @@ if test -z $(which anyenv); then
 fi
 
 echo "##### install pyenv #####"
-
 if test -z $(which pyenv); then
   anyenv install pyenv
   pyenv init
 fi
 
 echo "##### install goenv #####"
-
 if test -z $(which goenv); then
   anyenv install goenv
-fi
-
-echo "##### setup develop environment #####"
-
-if ! test -d ~/document/dev; then
-  mkdir -p ~/document/dev
 fi

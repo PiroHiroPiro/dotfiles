@@ -28,16 +28,44 @@ check_file() {
 
 echo "##### check health #####"
 
-echo "----- check brew -----"
-if [ -z $(which brew) ]; then
-  warn "not exists brew command."
+if [ "$(uname)" == "Darwin" ]; then
+    echo "----- check brew -----"
+    if [ -z $(which brew) ]; then
+      warn "not exists brew command."
+    fi
 fi
 
-echo "----- check ~/.config -----"
+echo "----- check root dotfiles -----"
+NECESSARY_FILES=(.bash_profile .bashrc)
+for file in ${NECESSARY_FILES[@]}; do \
+  check_file ~/$file alert
+done
 
+echo "----- check optional root dotfiles -----"''
+OPTION_FILES=(.bash_aliases .zprofile .zshrc .zsh_aliases .gitconfig .gitignore_global .tmux.conf)
+for file in ${OPTION_FILES[@]}; do \
+  check_file ~/$file warn
+done
+
+echo "----- check ~/.config -----"
 if [ ! -d ~/.config ]; then
   alert "not exits ~/.config"
 else
+  echo "----- check ~/.config/zsh -----"
+  if [ ! -d ~/.config/zsh ]; then
+    alert "not exists ~/.config/zsh"
+  else
+    check_file ~/.config/zsh/tmux.zsh alert
+  fi
+
+  echo "----- check ~/.config/fish -----"
+  if [ ! -d ~/.config/fish ]; then
+    alert "not exists ~/.config/fish"
+  else
+    check_file ~/.config/fish/config.fish alert
+    check_directory ~/.config/fish/functions alert
+  fi
+
   echo "----- check ~/.config/nvim -----"
   if [ ! -d ~/.config/nvim ]; then
     alert "not exists ~/.config/nvim"
@@ -54,32 +82,10 @@ else
     check_file ~/.config/dein/installer.sh warn
   fi
 
-  echo "----- check ~/.config/fish -----"
-  if [ ! -d ~/.config/fish ]; then
-    alert "not exists ~/.config/fish"
+  echo "----- check ~/.config/tmux -----"
+  if [ ! -d ~/.config/tmux ]; then
+    alert "not exists ~/.config/tmux"
   else
-    check_file ~/.config/fish/config.fish alert
-    check_directory ~/.config/fish/functions alert
+    check_directory ~/.config/tmux alert
   fi
-fi
-
-echo "----- check root dotfiles -----"
-NECESSARY_FILES=(.bash_profile .bashrc)
-for file in ${NECESSARY_FILES[@]}; do \
-  check_file ~/$file alert
-done
-
-echo "----- check optional root dotfiles -----"
-OPTION_FILES=(.vimrc .gitconfig .gitignore_global)
-for file in ${OPTION_FILES[@]}; do \
-  check_file ~/$file warn
-done
-
-echo "----- check develop environment -----"
-if [ -z $(which anyenv) ]; then
-  warn "not exists anyenv command."
-fi
-
-if [ -z $(which pyenv) ]; then
-  warn "not exists pyenv command."
 fi
