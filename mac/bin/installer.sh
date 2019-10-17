@@ -15,6 +15,9 @@ else
   brew cask install iterm2
 fi
 
+# iTermのダークテーマをインストール
+open "${HOME}/init/Solarized Dark.itermcolors"
+
 echo "----- install Google Chrome -----"
 if [ -d "/Applications/Google Chrome.app" ]; then
   echo "Google Chrome already exists"
@@ -27,13 +30,6 @@ if [ -d "/Applications/Backup and Sync.app" ]; then
   echo "Backup and Sync already exists"
 else
   brew cask install google-backup-and-sync
-fi
-
-echo "----- install Evernote -----"
-if [ -d /Applications/Evernote.app ]; then
-  echo "Evernote already exists"
-else
-  brew cask install evernote
 fi
 
 echo "----- install Slack -----"
@@ -55,13 +51,6 @@ if [ -d "/Applications/Visual Studio Code.app" ]; then
   echo "Visual Studio Code already exists"
 else
   brew cask install visual-studio-code
-fi
-
-echo "----- install Atom -----"
-if [ -d /Applications/Atom.app ]; then
-  echo "Atom already exists"
-else
-  brew cask install atom
 fi
 
 echo "----- install qmk dependencies -----"
@@ -106,13 +95,6 @@ if [ -d /Applications/Clipy.app ]; then
   echo "Clipy already exists"
 else
   brew cask install clipy
-fi
-
-echo "----- install duet -----"
-if [ -d "/Applications/duet.app" ]; then
-  echo "duet already exists"
-else
-  brew cask install duet
 fi
 
 echo "----- install Spectacle -----"

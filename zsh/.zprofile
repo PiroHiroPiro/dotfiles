@@ -1,5 +1,5 @@
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+if [ -f ~/.zshrc ]; then
+  . ~/.zshrc
 fi
 
 # anyenv
@@ -12,5 +12,3 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # pipenv
 export PIPENV_VENV_IN_PROJECT=1
-
-exec fish

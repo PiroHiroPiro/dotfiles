@@ -5,14 +5,14 @@ end
 # prompt
 function fish_prompt
   if [ $status -eq 0 ]
-    set fish_face " >><(( o> "
+    set prompt " >><(( o> "
   else
-    set fish_face " >><(( x> "
+    set prompt " >><(( x> "
   end
   set_color --bold white
   echo -n (prompt_pwd)
   set_color --bold cyan
-  echo -n $fish_face
+  echo -n $prompt
 end
 
 # gitのbranch名の抽出
@@ -36,7 +36,6 @@ set -x PATH $HOME/.anyenv/bin $PATH
 # pyenv
 set -x PATH $HOME/.anyenv/envs/pyenv/bin $PATH
 set -x PATH $HOME/.anyenv/envs/pyenv/shims $PATH
-status --is-interactive; and source (pyenv init -|psub)
 
 # goenv
 set -x PATH $HOME/.anyenv/envs/goenv/bin $PATH
@@ -46,18 +45,15 @@ set -x PATH $HOME/.anyenv/envs/goenv/shims $PATH
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
 
-# avr-gcc@7
-set -x PATH /usr/local/Cellar/avr-gcc@7/7.3.0/bin $PATH
-
 # more alias for ls
-alias la="ls -ls"
-alias ll="ls -la"
+alias ll="ls -lahG"
 
 # more alias for editor
 alias vi="vim"
 alias emacs="vim"
 
 # more alias for vagrant
+alias v="vagrant"
 alias vh="vagrant halt"
 alias vr="vagrant reload"
 alias vs="vagrant ssh"
@@ -69,10 +65,11 @@ alias d="docker"
 alias dc="docker-compose"
 alias drm="docker rm (docker ps -f status=exited -q) & docker rmi (docker images -f 'dangling=true' -q)"
 
+# more alias for kubernetes
+alias k="kubectl"
+
 # more alias for git
-alias ga="git add"
-alias gaa="git add ."
-alias gc="git commit"
+alias g="git"
 alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
@@ -81,4 +78,4 @@ alias gcm="git checkout master"
 alias gpom="git pull origin master"
 
 # more alias for cd
-alias dev="cd ~/document/dev"
+alias dev="cd ~/dev"

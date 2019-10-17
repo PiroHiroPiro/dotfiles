@@ -8,24 +8,28 @@ nvim/.config/dein/.cache/
 nvim/.config/dein/repos/
 
 # allow
+!.gitignore
 !Makefile
 !README.md
-!.gitignore
-!bin/*.sh
 
-!nvim/bin/*.sh
-!nvim/.config/nvim/init.vim
-!nvim/.config/nvim/dein.toml
+!*/bin/*.sh
 
-!fish/bin/*.sh
+!bash/.bash_aliases
+!bash/.bash_profile
+!bash/.bashrc
+
+!zsh/.zprofile
+!zsh/.zsh_aliases
+!zsh/.zshrc
+
 !fish/.config/fish/config.fish
 !fish/.config/fish/functions/*.fish
 
-!mac/bin/*.sh
-!mac/.bashrc
-!mac/.bash_aliases
-!mac/.bash_profile
-!mac/.gitconfig
-!mac/.gitignore_global
-!mac/.vimrc
-!mac/.netrc
+!git/.gitconfig
+!git/.gitignore_global
+
+!nvim/.config/nvim/init.vim
+!nvim/.config/nvim/dein.toml
+!nvim/.vimrc
+
+!tmux/.tmux.conf

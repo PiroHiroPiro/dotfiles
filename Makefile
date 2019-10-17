@@ -1,31 +1,30 @@
-.PHONY: help nvim fish app
+.PHONY: help init clean bash zsh fish git env mac health
 .DEFAULT_GOAL := help
 
-init: fish app terminal git env nvim macos ## setup and install all
+init: bash zsh git ## setup bash zsh git
 
-clean: ## delete auto created file and directory
-	rm -rf ~/langserver
+clean: ## uninstall and unlink files
+	bash ./zsh/bin/uninstaller.sh
+	bash ./fish/bin/uninstaller.sh
+	bash ./env/bin/uninstaller.sh
 
-nvim: env ## install and setup neovim
-	bash ./nvim/bin/installer.sh
+bash: ## setup bash
+	bash ./bash/bin/installer.sh
+
+zsh: ## install and setup zsh
+	bash ./zsh/bin/installer.sh
 
 fish: ## install and setup fish
 	bash ./fish/bin/installer.sh
 
-app: ## install mac app
-	bash ./mac/bin/installer.sh
+git: ## setup git
+	bash ./git/bin/installer.sh
 
-macos: ## setip macos system
+env: ## setup development environment
+	bash ./env/bin/installer.sh
+
+mac: ## setup system
 	bash ./mac/bin/system_setup.sh
-
-terminal: ## setup terminal setting
-	bash ./mac/bin/terminal-setup.sh
-
-git: ## setup gitconfig and so on...
-	bash ./mac/bin/git-setup.sh
-
-env: ## install dev env
-	bash ./mac/bin/env-installer.sh
 
 health: ## check whether my dotfiles are linked
 	bash ./bin/check-health.sh

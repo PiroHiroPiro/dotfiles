@@ -1,8 +1,6 @@
 [user]
     name = PiroHiroPiro
     email = hirohiro11071107@gmail.com
-[ghq]
-    root = ~/go/src/
 [core]
     excludesfile = ~/.gitignore_global
     editor = nvim -c \"set fenc=utf-8\"
