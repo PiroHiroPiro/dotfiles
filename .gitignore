@@ -9,6 +9,7 @@ nvim/.config/dein/repos/
 
 # allow
 !.gitignore
+!.gitkeep
 !Makefile
 !README.md
 
@@ -30,6 +31,3 @@ nvim/.config/dein/repos/
 
 !nvim/.config/nvim/init.vim
 !nvim/.config/nvim/dein.toml
-!nvim/.vimrc
-
-!tmux/.tmux.conf

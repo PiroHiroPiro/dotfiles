@@ -19,5 +19,5 @@ if test -z "$(ls ~/Library/Fonts/ | grep powerline)"; then
   cd ..
   rm -rf fonts
 else
-  echo "PoewrLine fonts already exists"
+  echo "PowerLine fonts already exists"
 fi

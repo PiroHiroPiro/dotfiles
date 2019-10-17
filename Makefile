@@ -1,12 +1,14 @@
-.PHONY: help init clean bash zsh fish git env mac health
+.PHONY: help init clean bash zsh fish git nvim env mac health
 .DEFAULT_GOAL := help
 
-init: bash zsh git ## setup bash zsh git
+init: bash zsh git nvim ## setup bash zsh git neovim
 
 clean: ## uninstall and unlink files
 	bash ./zsh/bin/uninstaller.sh
 	bash ./fish/bin/uninstaller.sh
+	bash ./nvim/bin/uninstaller.sh
 	bash ./env/bin/uninstaller.sh
+	rm -rf ~/langserver
 
 bash: ## setup bash
 	bash ./bash/bin/installer.sh
@@ -20,13 +22,16 @@ fish: ## install and setup fish
 git: ## setup git
 	bash ./git/bin/installer.sh
 
+nvim: ## install and setup neovim
+	bash ./nvim/bin/installer.sh
+
 env: ## setup development environment
 	bash ./env/bin/installer.sh
 
 mac: ## setup system
 	bash ./mac/bin/system_setup.sh
 
-health: ## check whether my dotfiles are linked
+health: ## check whether dotfiles are linked
 	bash ./bin/check-health.sh
 
 help: ## show help to make

@@ -51,6 +51,22 @@ echo "----- check ~/.config -----"
 if [ ! -d ~/.config ]; then
   alert "not exits ~/.config"
 else
+  echo "----- check ~/.config/nvim -----"
+  if [ ! -d ~/.config/nvim ]; then
+    alert "not exists ~/.config/nvim"
+  else
+    check_file ~/.config/nvim/init.vim alert
+    check_file ~/.config/nvim/dein.toml alert
+    check_file ~/.config/nvim/spell/en.utf-8.add warn
+  fi
+
+  echo "----- check ~/.config/dein -----"
+  if [ ! -d ~/.config/dein ]; then
+    alert "not exists ~/.config/dein"
+  else
+    check_file ~/.config/dein/installer.sh warn
+  fi
+
   echo "----- check ~/.config/fish -----"
   if [ ! -d ~/.config/fish ]; then
     alert "not exists ~/.config/fish"
