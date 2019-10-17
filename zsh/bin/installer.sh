@@ -32,6 +32,8 @@ for file in ${LINK_FILES[@]}; do \
   ln -sf $(PWD)/zsh/$file ~/$file; \
 done
 
+bash ./zsh/bin/font-installer.sh
+
 echo "----- change default shell -----"
 if [ "$(uname)" == "Darwin" ]; then
   if [ "$(dscl . -read ~/ UserShell | sed 's/UserShell: //')" != "$(which zsh)" ]; then
