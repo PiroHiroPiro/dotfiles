@@ -79,3 +79,8 @@ alias gpom="git pull origin master"
 
 # more alias for cd
 alias dev="cd ~/dev"
+
+# tmux
+if [ -z (echo $TMUX) ]
+  tmux
+end

@@ -3,7 +3,7 @@
 for macOS or Ubuntu
 
 ## Setup
-```
+```shell
 $ git clone https://github.com/PiroHiroPiro/dotfiles.git
 $ cd dotfiles
 $ make init

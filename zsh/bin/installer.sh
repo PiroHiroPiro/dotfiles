@@ -26,7 +26,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 echo "----- link zsh setting files -----"
-LINK_FILES=(.zprofile .zshrc .zsh_aliases)
+LINK_FILES=(.zprofile .zshrc .zsh_aliases .config/zsh)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
   ln -sf $(PWD)/zsh/$file ~/$file; \

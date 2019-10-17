@@ -13,7 +13,7 @@ if test -n $(which zsh); then
 fi
 
 echo "----- unlink zsh setting files -----"
-LINK_FILES=(.zprofile .zshrc .zsh_aliases)
+LINK_FILES=(.zprofile .zshrc .zsh_aliases .config/zsh)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null; ¥
 done

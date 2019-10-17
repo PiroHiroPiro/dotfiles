@@ -1,12 +1,13 @@
-.PHONY: help init clean bash zsh fish git nvim env mac health
+.PHONY: help init clean bash zsh fish git nvim tmux env mac health
 .DEFAULT_GOAL := help
 
-init: bash zsh git nvim ## setup bash zsh git neovim
+init: bash zsh git nvim tmux ## setup bash zsh git neovim tmux
 
 clean: ## uninstall and unlink files
 	bash ./zsh/bin/uninstaller.sh
 	bash ./fish/bin/uninstaller.sh
 	bash ./nvim/bin/uninstaller.sh
+	bash ./tmux/bin/uninstaller.sh
 	bash ./env/bin/uninstaller.sh
 	rm -rf ~/langserver
 
@@ -24,6 +25,9 @@ git: ## setup git
 
 nvim: ## install and setup neovim
 	bash ./nvim/bin/installer.sh
+
+tmux: ## install and setup tmux
+	bash ./tmux/bin/installer.sh
 
 env: ## setup development environment
 	bash ./env/bin/installer.sh
