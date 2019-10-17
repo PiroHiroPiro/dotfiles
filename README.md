@@ -9,6 +9,11 @@ $ cd dotfiles
 $ make init
 ```
 
+### on Ubuntu
+```shell
+$ sudo apt install -y build-essential
+```
+
 ## References
 - [g-hyoga/dotfiles](https://github.com/g-hyoga/dotfiles)
 - [calmery/Dotfiles](https://github.com/calmery/Dotfiles)
