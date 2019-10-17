@@ -3,10 +3,15 @@
 for macOS or Ubuntu
 
 ## Setup
+
+### by cURL
 ```shell
-$ git clone https://github.com/PiroHiroPiro/dotfiles.git
-$ cd dotfiles
-$ make init
+$ curl -sSL https://github.com/PiroHiroPiro/dotfiles/archive/v1.0.zip -o ~/dotfiles.zip && unzip ~/dotfiles.zip -d ~/dotfiles && cd ~/dotfiles && make init
+```
+
+### by Git
+```shell
+$ git clone https://github.com/PiroHiroPiro/dotfiles.git ~/dotfiles && cd ~/dotfiles && make init
 ```
 
 ### on Ubuntu
