@@ -44,5 +44,4 @@ fi
 make init
 
 # 終了
-
 exit 0
