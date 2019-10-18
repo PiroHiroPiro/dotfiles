@@ -4,13 +4,13 @@ DOTPATH=~/dotfiles
 
 # git が使えるなら git
 if test -z $(which git); then
-  git clone --recursive "https://github.com/PiroHiroPiro/dotfiles.git" DOTPATH
+  git clone --recursive "https://github.com/PiroHiroPiro/dotfiles.git" $DOTPATH
 
 # 使えない場合は curl か wget を使用する
 elif test -z $(which curl) || test -z $(which wget); then
   if test -z $(which curl); then
-    curl -sSL "https://github.com/PiroHiroPiro/dotfiles/archive/master.tar.gz" -o DOTPATH
-  elif has "wget"; then
+    curl -sSL "https://github.com/PiroHiroPiro/dotfiles/archive/master.tar.gz" -o $DOTPATH
+  elif test -z $(which wget); then
     wget -O - "https://github.com/PiroHiroPiro/dotfiles/archive/master.tar.gz"
   fi | tar zxv
 
@@ -20,13 +20,15 @@ elif test -z $(which curl) || test -z $(which wget); then
   # 解凍したら，DOTPATH に置く
   rm -rf dotfiles-master
 else
-  die "curl or wget required"
+  echo "curl or wget required"
+  exit(1)
 fi
 
-cd DOTPATH
+cd "${DOTPATH}"
 
 if [ $? -ne 0 ]; then
-  die "not found: $DOTPATH"
+  echo "not found: ${DOTPATH}"
+  exit(1)
 fi
 
 # makeの確認
@@ -40,3 +42,5 @@ fi
 
 # 移動できたらリンクを実行する
 make init
+
+exit(0)
