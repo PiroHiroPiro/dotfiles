@@ -127,7 +127,14 @@ if [ "$rate" = 0 ]; then
   exit 1
 fi
 
+MAX_LENGTH=10
+
+# もしMAX_LENGTHより長ければ省略
+if (( ${#ssid} > $MAX_LENGTH )); then
+  ssid="${ssid:0:MAX_LENGTH}..."
+fi
+
 # Outputs wifi
 #   example: "fun-wifi 351Mbs ▂ ▅   "
-# echo -e "${signal} ${ssid} ${rate}Mbs"
+# echo -e "${ssid} ${rate}Mbs ${signal}"
 echo -e "${ssid} ${rate}Mbs"
