@@ -5,7 +5,7 @@ for macOS or Ubuntu
 ## Setup
 
 ```shell
-$ curl -sSL https://github.com/PiroHiroPiro/dotfiles/archive/v1.0.zip -o ~/dotfiles.zip && unzip ~/dotfiles.zip -d ~/dotfiles && cd ~/dotfiles && make init
+$ curl -sSL https://raw.githubusercontent.com/PiroHiroPiro/dotfiles/master/install.sh | sh
 ```
 
 ## References
