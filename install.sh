@@ -19,7 +19,7 @@ elif test -z $(which curl) || test -z $(which wget); then
 
   # 解凍したら，DOTPATH に置く
   rm -rf dotfiles-master
-elif
+else
   die "curl or wget required"
 fi
 
