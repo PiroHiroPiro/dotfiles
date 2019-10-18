@@ -1,7 +1,3 @@
-if [ -f ~/.zshrc ]; then
-  . ~/.zshrc
-fi
-
 # anyenv
 export PATH=$HOME/.anyenv/bin:$PATH
 if which anyenv > /dev/null; then eval "$(anyenv init -)"; fi

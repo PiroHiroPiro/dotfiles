@@ -5,7 +5,7 @@ echo "##### uninstall tmux #####"
 if test -n $(which tmux); then
   echo "----- uninstall tmux -----"
   if [ "$(uname)" == "Darwin" ]; then
-    brew uninstall tmux
+    brew uninstall tmux reattach-to-user-namespace
   elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     sudo apt uninstall -y tmux
   fi

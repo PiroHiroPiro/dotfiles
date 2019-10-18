@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 has() { type "$1" &>/dev/null; }
 
@@ -30,11 +30,11 @@ get_battery() {
 # is_charging returns true if the battery is charging
 is_charging() {
   if has "pmset"; then
-    pmset -g ps | grep -E "Battery Power|charged" >/dev/null 2>&1
+    pmset -g ps | grep -E "Battery Power|charged" | grep "charged" >/dev/null 2>&1
     if [ $? -eq 0  ]; then
-      return 1
-    else
       return 0
+    else
+      return 1
     fi
   elif has "ioreg"; then
     ioreg -c AppleSmartBattery | grep "IsCharging" | grep "Yes" >/dev/null 2>&1
@@ -67,13 +67,13 @@ battery_color_tmux() {
   percentage="${1:-$(get_battery)}"
 
   if is_charging; then
-    [[ -n $percentage ]] && echo -e "#[fg=colour46]${percentage}#[default]"
+    [[ -n $percentage ]] && echo -e "#[bg=default,fg=default]${percentage}#[default]"
   else
     # percentage > BATTERY_DANGER
     if [ "${percentage%%%*}" -ge "$BATTERY_DANGER" ]; then
-      echo -e "#[fg=blue]${percentage}#[default]"
+      echo -e "#[bg=default,fg=default]${percentage}#[default]"
     else
-      echo -e "#[fg=red]${percentage}#[default]"
+      echo -e "#[bg=red,fg=white]${percentage}#[default]"
     fi
   fi
 }

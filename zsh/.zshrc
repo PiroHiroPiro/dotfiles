@@ -56,6 +56,5 @@ zplug load
 ENHANCD_HOOK_AFTER_CD="ls -GFl"
 
 # spaceship-prompt
-# export SPACESHIP_CHAR_SYMBOL="%(?.٩(*'ω'%)و.(*´'σ'%)?) < "
 export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "
 export SPACESHIP_DIR_TRUNC_REPO=false

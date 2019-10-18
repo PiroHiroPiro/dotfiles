@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 #
 # @(#) wifi v0.2.0 2015-09-24
 #
@@ -129,4 +129,5 @@ fi
 
 # Outputs wifi
 #   example: "fun-wifi 351Mbs ▂ ▅   "
+# echo -e "${signal} ${ssid} ${rate}Mbs"
 echo -e "${ssid} ${rate}Mbs"
