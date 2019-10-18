@@ -30,5 +30,8 @@ alias gs="git status"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 
+# more alias for tmux
+alias t="tmux"
+
 # more alias for cd
 alias dev="cd ~/dev"

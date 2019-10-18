@@ -39,9 +39,8 @@ else
       return 1
     fi
 
-    if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -qE ".*]$"; then
+    if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -v "attached"; then
       # detached session exists
-      tmux list-sessions
       echo -n "Tmux: attach? (y/N/num) "
       read
       if [[ "$REPLY" =~ ^[Yy]$ ]] || [[ "$REPLY" == "" ]]; then
