@@ -37,3 +37,6 @@ nvim/.config/dein/repos/
 
 !tmux/.tmux.conf
 !tmux/.config/tmux/*.sh
+
+!mac/vscode/extensions.list
+!mac/vscode/settings.json

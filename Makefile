@@ -32,7 +32,8 @@ tmux: ## install and setup tmux
 env: ## setup development environment
 	bash ./env/bin/installer.sh
 
-mac: ## setup system
+mac: ## setup vscode, system
+	bash ./mac/bin/vscode_installer.sh
 	bash ./mac/bin/system_setup.sh
 
 health: ## check whether dotfiles are linked
