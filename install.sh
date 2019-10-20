@@ -16,9 +16,6 @@ elif test -n $(which curl) || test -n $(which wget); then
 
   # 解凍したら，DOTPATH に置く
   mv -f dotfiles-master $DOTPATH
-
-  # 解凍したら，DOTPATH に置く
-  rm -rf dotfiles-master
 else
   echo "curl or wget required"
   exit 1
