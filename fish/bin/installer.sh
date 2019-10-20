@@ -4,15 +4,11 @@ echo "##### setup fish #####"
 
 if test -z $(which fish); then
   echo "----- install fish -----"
-  if [ "$(uname)" == "Darwin" ]; then
-    if test -z $(which brew); then
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-    brew install fish fzf
-    sudo sh -c "echo $(which fish) >> /etc/shells"
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt install -y fish fzf
+  if test -z $(which brew); then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
+  brew install fish fzf
+  sudo sh -c "echo $(which fish) >> /etc/shells"
 fi
 
 echo "----- link fish setting files -----"
@@ -28,15 +24,8 @@ for file in ${LINK_FILES[@]}; do \
 done
 
 echo "----- change default shell -----"
-echo "----- change default shell -----"
-if [ "$(uname)" == "Darwin" ]; then
-  if [ "$(dscl . -read ~/ UserShell | sed 's/UserShell: //')" != "$(which fish)" ]; then
-    chsh -s $(which fish)
-  fi
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  if [ "$(echo $SHELL)" != "$(which fish)" ]; then
-    chsh -s $(which fish)
-  fi
+if [ "$(dscl . -read ~/ UserShell | sed 's/UserShell: //')" != "$(which fish)" ]; then
+  chsh -s $(which fish)
 fi
 
 echo "##### finish to setup fish #####"

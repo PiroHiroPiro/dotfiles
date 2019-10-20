@@ -4,11 +4,7 @@ echo "##### setup git #####"
 
 if test -z $(which git); then
   echo "----- install git -----"
-  if [ "$(uname)" == "Darwin" ]; then
-    xcode-select --install
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt install -y git
-  fi
+  xcode-select --install
 fi
 
 echo "----- link git setting files -----"

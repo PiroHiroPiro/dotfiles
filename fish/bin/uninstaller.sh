@@ -13,11 +13,7 @@ done
 
 if test -n $(fish); then
   echo "----- uninstall fish -----"
-  if [ "$(uname)" == "Darwin" ]; then
-    brew uninstall fish
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt uninstall -y fish
-  fi
+  brew uninstall fish
 fi
 
 echo "##### finish to uninstall fish #####"

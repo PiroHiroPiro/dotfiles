@@ -33,11 +33,7 @@ fi
 
 # makeの確認
 if test -z $(which make); then
-  if [ "$(uname)" == "Darwin" ]; then
-    xcode-select --install
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt install -y build-essential
-  fi
+  xcode-select --install
 fi
 
 # 移動できたらmakeで実行する

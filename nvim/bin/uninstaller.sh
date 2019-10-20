@@ -19,11 +19,7 @@ rm -rf ~/.config/dein/cache_nvim
 
 if test -n $(which nvim); then
   echo "----- uninstall neovim -----"
-  if [ "$(uname)" == "Darwin" ]; then
-    brew uninstall neovim
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt uninstall -y neovim
-  fi
+  brew uninstall neovim
 fi
 
 echo "##### finish to uninstall neovim #####"

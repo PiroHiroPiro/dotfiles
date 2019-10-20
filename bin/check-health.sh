@@ -28,11 +28,9 @@ check_file() {
 
 echo "##### check health #####"
 
-if [ "$(uname)" == "Darwin" ]; then
-    echo "----- check brew -----"
-    if [ -z $(which brew) ]; then
-      warn "not exists brew command."
-    fi
+echo "----- check brew -----"
+if [ -z $(which brew) ]; then
+  warn "not exists brew command."
 fi
 
 echo "----- check root dotfiles -----"

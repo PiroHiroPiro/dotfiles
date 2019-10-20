@@ -1,6 +1,6 @@
 # dotfiles
 
-for macOS or Ubuntu
+dotfiles for macOS
 
 ## Setup
 

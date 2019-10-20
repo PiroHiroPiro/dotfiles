@@ -13,12 +13,7 @@ done
 
 if test -n $(which zsh); then
   echo "----- uninstall zsh -----"
-  if [ "$(uname)" == "Darwin" ]; then
-    brew uninstall zplug
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt uninstall -y zsh
-    sudo rm -rf ~/.zplug
-  fi
+  brew uninstall zplug
 fi
 
 echo "##### finish to uninstall zsh #####"

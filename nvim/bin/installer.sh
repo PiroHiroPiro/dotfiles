@@ -6,14 +6,10 @@ bash ./nvim/bin/font-installer.sh
 
 if test -z $(which nvim); then
   echo "----- install neovim -----"
-  if [ "$(uname)" == "Darwin" ]; then
-    if test -z $(which brew); then
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    fi
-    brew install neovim
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt install -y neovim
+  if test -z $(which brew); then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
+  brew install neovim
 fi
 
 bash ./nvim/bin/dependency-installer.sh
