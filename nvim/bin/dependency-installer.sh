@@ -3,14 +3,14 @@
 CURRENT_PATH=$(PWD)
 
 echo "##### install dependencies #####"
-if test -z $(which brew); then
+if [ -z $(which brew) ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-if test -z $(which yarn); then
+if [ -z $(which yarn) ]; then
   echo "------ install yarn -----"
   brew install yarn
 fi
-if test -z $(which fzf); then
+if [ -z $(which fzf) ]; then
   echo "------ install fzf -----"
   brew install fzf
 fi
@@ -21,17 +21,17 @@ if [ ! -d ~/langserver ]; then
 fi
 
 echo "----- install bash-language-server -----"
-if test -z $(which bash-language-server); then
+if [ -z $(which bash-language-server) ]; then
   yarn global add bash-language-server
 fi
 
 echo "----- install dockerfile-language-server -----"
-if test -z $(which docker-langserver); then
+if [ -z $(which docker-langserver) ]; then
   yarn global add dockerfile-language-server-nodejs
 fi
 
 echo "----- install yaml-language-server -----"
-if test -e ~/langserver/yaml-language-server/out/server/src/server.js; then
+if [ -e ~/langserver/yaml-language-server/out/server/src/server.js ]; then
   echo "yaml-language-server already exists"
 else
   cd ~/langserver && \

@@ -2,9 +2,9 @@
 
 echo "##### setup zsh #####"
 
-if test -z $(which zsh); then
+if [ -z $(which zsh) ]; then
   echo "----- install zsh -----"
-  if test -z $(which brew); then
+  if [ -z $(which brew) ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   brew install zsh
@@ -17,7 +17,7 @@ echo "----- link zsh setting files -----"
 LINK_FILES=(.zprofile .zshrc .zsh_aliases .config/zsh)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
-  ln -sf $(PWD)/zsh/$file ~/$file; \
+  ln -sf $(pwd)/zsh/$file ~/$file; \
 done
 
 bash ./zsh/bin/font-installer.sh

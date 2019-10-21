@@ -3,15 +3,18 @@
 DOTPATH=~/dotfiles
 
 # git が使えるなら git
-if test -n $(which git); then
+if [ -n $(which git) ]; then
   git clone --recursive "https://github.com/PiroHiroPiro/dotfiles.git" $DOTPATH
 
 # 使えない場合は curl を使用する
-else
+elif [ -n $(which curl)]; then
   curl -sSL "https://github.com/PiroHiroPiro/dotfiles/archive/master.tar.gz" -o $DOTPATH | tar zxv
-
   # 解凍したら，DOTPATH に置く
   mv -f dotfiles-master $DOTPATH
+
+else
+  echo "git or curl required"
+  exit 1
 fi
 
 cd "${DOTPATH}"
@@ -21,8 +24,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# make の確認
-if test -z $(which make); then
+# makeの確認
+if [ -z $(which make) ]; then
   xcode-select --install
 fi
 

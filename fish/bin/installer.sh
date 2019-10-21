@@ -2,9 +2,9 @@
 
 echo "##### setup fish #####"
 
-if test -z $(which fish); then
+if [ -z $(which fish) ]; then
   echo "----- install fish -----"
-  if test -z $(which brew); then
+  if [ -z $(which brew) ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   brew install fish fzf
@@ -20,7 +20,7 @@ fi
 LINK_FILES=(.config/fish)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
-  ln -sf $(PWD)/fish/$file ~/$file; \
+  ln -sf $(pwd)/fish/$file ~/$file; \
 done
 
 echo "----- change default shell -----"

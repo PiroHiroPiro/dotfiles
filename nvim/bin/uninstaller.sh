@@ -17,7 +17,7 @@ fi
 rm -rf ~/.config/dein/.cache
 rm -rf ~/.config/dein/cache_nvim
 
-if test -n $(which nvim); then
+if [ -n $(which nvim) ]; then
   echo "----- uninstall neovim -----"
   brew uninstall neovim
 fi

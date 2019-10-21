@@ -6,7 +6,7 @@ echo "----- link bash setting files -----"
 LINK_FILES=(.bash_profile .bashrc .bash_aliases)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
-  ln -sf $(PWD)/bash/$file ~/$file; \
+  ln -sf $(pwd)/bash/$file ~/$file; \
 done
 
 echo "----- change default shell -----"

@@ -11,7 +11,7 @@ for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null; \
 done
 
-if test -n $(which zsh); then
+if [ -n $(which zsh) ]; then
   echo "----- uninstall zsh -----"
   brew uninstall zplug
 fi

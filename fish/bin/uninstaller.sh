@@ -11,7 +11,7 @@ for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null; \
 done
 
-if test -n $(fish); then
+if [ -n $(fish) ]; then
   echo "----- uninstall fish -----"
   brew uninstall fish
 fi

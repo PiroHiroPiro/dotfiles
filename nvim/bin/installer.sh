@@ -4,9 +4,9 @@ echo "##### setup neovim #####"
 
 bash ./nvim/bin/font-installer.sh
 
-if test -z $(which nvim); then
+if [ -z $(which nvim) ]; then
   echo "----- install neovim -----"
-  if test -z $(which brew); then
+  if [ -z $(which brew) ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   brew install neovim
@@ -23,7 +23,7 @@ fi
 LINK_FILES=(.config/dein .config/nvim)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
-  ln -sf $(PWD)/nvim/$file ~/$file; \
+  ln -sf $(pwd)/nvim/$file ~/$file; \
 done
 
 echo "----- install dein.vim -----"
