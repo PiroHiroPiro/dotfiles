@@ -2,6 +2,12 @@
 
 DOTPATH=~/dotfiles
 
+if [ -d $DOTPATH ]; then
+  read -p "The folder (${DOTPATH}) exists. Do you want to overwrite it ? [y/N]: " yn </dev/tty
+  case "$yn" in [yY]*) ;; *) exit ;; esac
+  rm -rf $DOTPATH
+fi
+
 # git が使えるなら git
 if [ -n $(which git) ]; then
   git clone --recursive "https://github.com/PiroHiroPiro/dotfiles.git" $DOTPATH
@@ -17,14 +23,14 @@ else
   exit 1
 fi
 
-cd "${DOTPATH}"
+cd ${DOTPATH}
 
 if [ $? -ne 0 ]; then
   echo "not found: ${DOTPATH}"
   exit 1
 fi
 
-# makeの確認
+# make の確認
 if [ -z $(which make) ]; then
   xcode-select --install
 fi
