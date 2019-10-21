@@ -6,9 +6,6 @@ bash ./nvim/bin/font-installer.sh
 
 if [ -z $(which nvim) ]; then
   echo "----- install neovim -----"
-  if [ -z $(which brew) ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
   brew install neovim
 fi
 

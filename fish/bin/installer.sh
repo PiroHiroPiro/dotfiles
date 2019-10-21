@@ -4,9 +4,6 @@ echo "##### setup fish #####"
 
 if [ -z $(which fish) ]; then
   echo "----- install fish -----"
-  if [ -z $(which brew) ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
   brew install fish fzf
   sudo sh -c "echo $(which fish) >> /etc/shells"
 fi

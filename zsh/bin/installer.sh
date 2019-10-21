@@ -4,9 +4,6 @@ echo "##### setup zsh #####"
 
 if [ -z $(which zsh) ]; then
   echo "----- install zsh -----"
-  if [ -z $(which brew) ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
   brew install zsh
 fi
 if [ ! -d ~/.zplug ]; then

@@ -4,9 +4,6 @@ echo "##### setup tmux #####"
 
 if [ -z $(which tmux) ]; then
   echo "----- install tmux -----"
-  if [ -z $(which brew) ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
   brew install tmux reattach-to-user-namespace
 fi
 

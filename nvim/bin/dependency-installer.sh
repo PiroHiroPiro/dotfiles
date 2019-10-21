@@ -3,9 +3,6 @@
 CURRENT_PATH=$(PWD)
 
 echo "##### install dependencies #####"
-if [ -z $(which brew) ]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
 if [ -z $(which yarn) ]; then
   echo "------ install yarn -----"
   brew install yarn
