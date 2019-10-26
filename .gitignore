@@ -39,5 +39,6 @@ nvim/.config/dein/repos/
 !tmux/.config/tmux/*.sh
 
 !mac/iterm2/com.googlecode.iterm2.plist
+!mac/jetbrains/Monokai Sublime Text 3.jar
 !mac/vscode/extensions.list
 !mac/vscode/settings.json
