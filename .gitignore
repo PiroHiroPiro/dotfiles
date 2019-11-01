@@ -41,4 +41,5 @@ nvim/.config/dein/repos/
 !mac/iterm2/com.googlecode.iterm2.plist
 !mac/jetbrains/Monokai Sublime Text 3.jar
 !mac/vscode/extensions.list
+!mac/vscode/keybindings.json
 !mac/vscode/settings.json

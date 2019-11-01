@@ -8,7 +8,7 @@ sudo nvram SystemAudioVolume=" "
 # バッテリーを%表示
 defaults write com.apple.menuextra.battery ShowPercent -string YES
 # メニューバーの日付表示形式指定
-defaults write com.apple.menuextra.clock DateFormat -string "MM月dd日(E) a hh時mm分ss秒"
+# defaults write com.apple.menuextra.clock DateFormat -string "MM月dd日(E) a hh時mm分ss秒"
 # ダウンロードしたアプリを開いたときの警告無視
 defaults write com.apple.LaunchServices LSQuarantine -int 0
 # MissionControlでデスクトップの順番が入れ替わるの禁止
