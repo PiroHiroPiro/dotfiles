@@ -14,7 +14,7 @@ if [ -n $(which git) ]; then
 
 # 使えない場合は curl を使用する
 elif [ -n $(which curl)]; then
-  curl -sSL "https://github.com/PiroHiroPiro/dotfiles/archive/master.tar.gz" -o $DOTPATH | tar zxv
+  curl -sSL "https://github.com/PiroHiroPiro/dotfiles/archive/master.tar.gz" | tar zxv
   # 解凍したら，DOTPATH に置く
   mv -f dotfiles-master $DOTPATH
 
