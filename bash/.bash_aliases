@@ -30,6 +30,18 @@ alias gs="git status"
 alias gcm="git checkout master"
 alias gpom="git pull origin master"
 
+# more alias for hub
+alias h="hub"
+alias hc="hub create"
+alias hb="hub browse"
+alias hf="hub fork"
+alias hi="hub issue"
+alias his="hub issue show"
+alias hic="hub issue create"
+alias hp="hub pull-request"
+alias hpl="hub pr list"
+alias hpc="hub pr checkout"
+
 # more alias for tmux
 alias t="tmux"
 
