@@ -1,4 +1,4 @@
-if [ -f ~/.zshrc ]; then
+if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
 fi
 
@@ -59,5 +59,4 @@ ENHANCD_HOOK_AFTER_CD="ls -GFl"
 export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "
 export SPACESHIP_DIR_TRUNC_REPO=false
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

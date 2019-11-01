@@ -10,6 +10,10 @@ LINK_FILES=(.zprofile .zshrc .zsh_aliases .config/zsh)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null; \
 done
+LINK_FILES=(.zprofile .zshrc)
+for file in ${LINK_FILES[@]}; do \
+  unlink ~/.zsh/$file&>/dev/null; \
+done
 
 if [ -n $(which zsh) ]; then
   echo "----- uninstall zsh -----"

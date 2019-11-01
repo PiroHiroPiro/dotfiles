@@ -45,6 +45,11 @@ for file in ${OPTION_FILES[@]}; do \
   check_file ~/$file warn
 done
 
+ZSH_FILES=(.zprofile .zshrc .zsh_aliases)
+for file in ${ZSH_FILES[@]}; do \
+  check_file ~/.zsh/$file warn
+done
+
 echo "----- check ~/.config -----"
 if [ ! -d ~/.config ]; then
   alert "not exits ~/.config"
