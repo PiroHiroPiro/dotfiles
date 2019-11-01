@@ -30,21 +30,6 @@ function cd
   builtin cd $argv; and ls
 end
 
-# anyenv
-set -x PATH $HOME/.anyenv/bin $PATH
-
-# pyenv
-set -x PATH $HOME/.anyenv/envs/pyenv/bin $PATH
-set -x PATH $HOME/.anyenv/envs/pyenv/shims $PATH
-
-# goenv
-set -x PATH $HOME/.anyenv/envs/goenv/bin $PATH
-set -x PATH $HOME/.anyenv/envs/goenv/shims $PATH
-
-# go
-set -x GOPATH $HOME/go
-set -x PATH $GOPATH/bin $PATH
-
 # more alias for ls
 alias ll="ls -lahG"
 
