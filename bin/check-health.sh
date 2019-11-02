@@ -45,7 +45,7 @@ for file in ${OPTION_FILES[@]}; do \
   check_file ~/$file warn
 done
 
-ZSH_FILES=(.zprofile .zshrc .zsh_aliases)
+ZSH_FILES=(.zprofile .zshrc)
 for file in ${ZSH_FILES[@]}; do \
   check_file ~/.zsh/$file warn
 done
@@ -92,3 +92,5 @@ else
     check_directory ~/.config/tmux alert
   fi
 fi
+
+echo "##### finish to check health #####"
