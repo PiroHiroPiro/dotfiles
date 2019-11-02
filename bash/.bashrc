@@ -1,3 +1,3 @@
-if [ -f ~/.bashrc ]; then
+if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
