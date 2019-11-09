@@ -1,0 +1,25 @@
+
+
+# ==== Emojis ====
+# ✨  :sparkles: 新機能（New Feature）
+# 👍  :+1: 機能改善
+# 🎉  :tada: 盛大に祝うべき大きな機能追加
+# 🐛  :bug: バグ修正（Bugfix）
+# 🔧  :wrench: リファクタリング（Refactoring）
+# 🗑️  :wastebasket: 不要な機能・使われなくなった機能の削除（Removal）
+# ✏️  :pencil2: Lintエラーの修正やコードスタイルの修正
+# 🎨  :art: デザインUI/UX(Accessibility)
+# 📝  :pencil: ドキュメントの作成や修正（Writing docs）
+# 🚀  :rocket: パフォーマンス改善
+# 🔒  :lock: セキュリティ関連の改善
+# 🚧  :construction: WIP(Work In Progress)
+# 🍎  :apple: Fixing something on macOS.
+# 🐧  :penguin: Fixing something on Linux.
+# 🏁  :checkered_flag: Fixing something on Windows.
+# 🤖  :robot: Fixing something on Android.
+# 🍏  :green_apple: Fixing something on iOS.
+
+# ==== Format ====
+# :emoji: Subject
+#
+# Commit body...

@@ -8,7 +8,7 @@ if [ -z $(which git) ]; then
 fi
 
 echo "----- link git setting files -----"
-LINK_FILES=(.gitconfig .gitignore_global)
+LINK_FILES=(.gitconfig .gitignore_global .commit_template)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
   ln -sf $(pwd)/git/$file ~/$file; \

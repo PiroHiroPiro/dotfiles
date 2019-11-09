@@ -4,6 +4,8 @@
 [core]
     excludesfile = ~/.gitignore_global
 	editor = vim
+[commit]
+    template = ~/.commit_template
 [alias]
     ignore = !"f() { local s=$1; shift; \
         while [ $# -gt 0 ]; do s=\"$s,$1\"; shift; done;\

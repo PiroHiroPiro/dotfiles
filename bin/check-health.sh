@@ -40,7 +40,7 @@ for file in ${NECESSARY_FILES[@]}; do \
 done
 
 echo "----- check optional root dotfiles -----"''
-OPTION_FILES=(.bash_aliases .zprofile .zshrc .zsh_aliases .gitconfig .gitignore_global .tmux.conf)
+OPTION_FILES=(.bash_aliases .zprofile .zshrc .zsh_aliases .gitconfig .gitignore_global .commit_template .tmux.conf)
 for file in ${OPTION_FILES[@]}; do \
   check_file ~/$file warn
 done
