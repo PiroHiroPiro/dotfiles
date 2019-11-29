@@ -12,18 +12,10 @@ if [ ! -d ~/.zplug ]; then
 fi
 
 echo "----- link zsh setting files -----"
-LINK_FILES=(.zprofile .zshrc .zsh_aliases .config/zsh)
+LINK_FILES=(.zshrc .zsh_aliases .config/zsh)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
   ln -sf $(pwd)/zsh/$file ~/$file; \
-done
-LINK_FILES=(.zprofile .zshrc)
-if [ ! -d ~/.zsh ]; then
-  mkdir ~/.zsh
-fi
-for file in ${LINK_FILES[@]}; do \
-  unlink ~/.zsh/$file&>/dev/null
-  ln -sf $(pwd)/zsh/$file ~/.zsh/$file; \
 done
 
 bash ./zsh/bin/font-installer.sh

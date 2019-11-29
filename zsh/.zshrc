@@ -56,7 +56,6 @@ ENHANCD_HOOK_AFTER_CD="ls -GFl"
 export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "
 export SPACESHIP_DIR_TRUNC_REPO=false
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # tmux
+echo "aaa"
 source ~/.config/zsh/tmux.zsh
