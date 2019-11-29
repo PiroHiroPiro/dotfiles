@@ -57,5 +57,4 @@ export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "
 export SPACESHIP_DIR_TRUNC_REPO=false
 
 # tmux
-echo "aaa"
 source ~/.config/zsh/tmux.zsh
