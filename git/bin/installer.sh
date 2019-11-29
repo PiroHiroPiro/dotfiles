@@ -14,9 +14,12 @@ for file in ${LINK_FILES[@]}; do \
   ln -sf $(pwd)/git/$file ~/$file; \
 done
 
-echo "----- install GitHub CLI -----"
-if [ -z $(which hub) ]; then
-  brew install hub
-fi
+echo "----- install CLI -----"
+CLI_LIST=(hub lazygit)
+for cli in ${CLI_LIST[@]}; do \
+  if [ -z $(which $cli) ]; then
+    brew install $cli
+  fi
+done
 
 echo "##### finish to setup git #####"

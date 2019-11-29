@@ -80,6 +80,9 @@ alias t="tmux"
 # more alias for cd
 alias dev="cd ~/dev"
 
+# more alias for lazygit
+alias lg="lazygit"
+
 # tmux
 if [ -z (echo $TMUX) ]
   tmux
