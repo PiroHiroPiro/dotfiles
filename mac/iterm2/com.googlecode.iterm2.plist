@@ -67,6 +67,8 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUStatusFrame</key>
+	<string>640 673 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>490 303 700 622 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -822,8 +824,9 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.4</string>
 		<string>3.3.5</string>
+		<string>3.3.4</string>
+		<string>3.3.7</string>
 		<string>3.3.6</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
@@ -840,12 +843,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{44, 793}</string>
+		<string>{738, 693}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>ED62BABB-379E-47BC-9F27-E77FC0D67EB2</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>40</integer>
+	<integer>49</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>592388945.41497695</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1604,7 +1607,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-15T08:38:59Z</date>
+	<date>2019-12-01T11:00:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -1620,7 +1623,7 @@
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
