@@ -9,6 +9,7 @@ if ! brew list zsh > /dev/null 2>&1; then
 fi
 if [ ! -d ~/.zplug ]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  brew install coreutils
 fi
 
 echo "----- link zsh setting files -----"

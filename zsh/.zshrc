@@ -44,13 +44,15 @@ zplug "stedolan/jq", from:gh-r, as:command, rename-to:"jq"
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/emoji-cli"
 zplug "b4b4r07/httpstat", as:command, use:"(*).sh", rename-to:"$1"
+zplug "supercrabtree/k"
 
 # source plugins and add commands to the PATH
 if ! zplug check; then zplug install ;fi
 zplug load
 
 # enhancd
-ENHANCD_HOOK_AFTER_CD="ls -GFl"
+#ENHANCD_HOOK_AFTER_CD="ls -GFl"
+ENHANCD_HOOK_AFTER_CD="ls"
 
 # spaceship-prompt
 export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "

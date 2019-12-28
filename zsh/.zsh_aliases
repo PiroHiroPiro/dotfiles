@@ -19,7 +19,10 @@ alias dc="docker-compose"
 alias drm="docker rm $(docker ps -f status=exited -q) & docker rmi $(docker images -f 'dangling=true' -q)"
 
 # more alias for kubernetes
-alias k="kubectl"
+# alias k="kubectl"
+
+# more alias for k
+alias ls="k -a -h"
 
 # more alias for git
 alias g="git"
