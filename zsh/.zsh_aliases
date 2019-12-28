@@ -1,5 +1,5 @@
 # more alias for ls
-alias ll="ls -lahG"
+alias ll="ls -ahlFG"
 
 # more alias for editor
 alias vi="vim"
@@ -20,9 +20,6 @@ alias drm="docker rm $(docker ps -f status=exited -q) & docker rmi $(docker imag
 
 # more alias for kubernetes
 # alias k="kubectl"
-
-# more alias for k
-alias ls="k -a -h"
 
 # more alias for git
 alias g="git"
