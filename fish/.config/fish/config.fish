@@ -51,7 +51,7 @@ alias dc="docker-compose"
 alias drm="docker rm (docker ps -f status=exited -q) & docker rmi (docker images -f 'dangling=true' -q)"
 
 # more alias for kubernetes
-alias k="kubectl"
+# alias k="kubectl"
 
 # more alias for git
 alias g="git"
@@ -74,14 +74,15 @@ alias hp="hub pull-request"
 alias hpl="hub pr list"
 alias hpc="hub pr checkout"
 
+# more alias for lazygit
+alias lg="lazygit"
+
 # more alias for tmux
 alias t="tmux"
 
 # more alias for cd
+alias home="cd ~"
 alias dev="cd ~/dev"
-
-# more alias for lazygit
-alias lg="lazygit"
 
 # tmux
 if [ -z (echo $TMUX) ]
