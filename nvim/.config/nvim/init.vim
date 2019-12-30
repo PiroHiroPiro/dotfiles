@@ -1,26 +1,38 @@
+"""" dein """"
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 " Required:
-set runtimepath+=~/.config/dein/./repos/github.com/Shougo/dein.vim
+" Add the dein installation directory into runtimepath
+" ~/.config/deinで
+" sh installer.sh .
+" したと仮定
+let deinroot = "~/.config/dein/."
+let $DEIN_PATH= deinroot . "/repos/github.com/Shougo/dein.vim"
+let s:toml = "~/.config/nvim/dein.toml"
 
 " Required:
-if dein#load_state('~/.config/dein/.')
-  call dein#begin('~/.config/dein/.')
+set runtimepath+=$DEIN_PATH
+
+" Required:
+if dein#load_state(deinroot)
+  call dein#begin(deinroot)
 
   " Let dein manage dein
   " Required:
-  call dein#add('~/.config/dein/./repos/github.com/Shougo/dein.vim')
+  call dein#add($DEIN_PATH)
 
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
+  call dein#load_toml(s:toml, {'lazy': 0})
 
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  " not installed python...
+  " call dein#add('Shougo/deoplete.nvim')
 
-  " Required:
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
   call dein#end()
   call dein#save_state()
 endif
@@ -30,19 +42,21 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
+"""" shell """"
 " fish使ってるとエラー出ることがある
-set shell=/bin/bash
-""""エンコード""""
+" set shell=/bin/bash
+
+"""" エンコード """"
 set encoding=UTF-8
 set termencoding=UTF-8
 set fileformats=unix,dos,mac
 set fileencodings=utf-8
 
-""""表示系""""
+"""" 表示系 """"
 " 色付き表示
 syntax on
 " 行番号の表示
@@ -70,10 +84,12 @@ set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 " ステータスライン
 set laststatus=2
+" 現在のモードを表示
+set showmode
 " メッセージ表示欄
 "set cmdheight=2
 " コマンドを画面下に表示させる
-"set showcmd
+set showcmd
 " タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
@@ -97,6 +113,18 @@ let loaded_matchparen = 1
 " cursor guide
 set cursorline
 set cursorcolumn
+" 検索した文字をハイライトする
+set hls
+
+" colorscheme
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" tmux
+" https://qiita.com/yami_beta/items/ef535d3458addd2e8fbb#tmux-%E4%B8%8A%E3%81%A7-vim-%E3%82%92%E4%BD%BF%E3%81%86%E5%A0%B4%E5%90%88
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 """"操作系""""
 " tabをスペース2個分に
@@ -110,6 +138,9 @@ inoremap jj <Esc>
 "set virtualedit=all
 " backspace効かないので
 set backspace=indent,eol,start
+" ファイル名補完
+set wildmenu
+set wildmode=full
 " マウス対応
 "set mouse=a
 "set ttymouse=xterm2
@@ -121,6 +152,11 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+" キーマップ
+nnoremap <ESC><ESC> :q<CR>
+nnoremap <C-p> :bPrev<CR>
+nnoremap <C-n> :bNext<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " インクリメンタルサーチ. 1文字入力毎に検索を行う
@@ -163,34 +199,3 @@ set nocompatible
 " 文字化け対策
 set ttimeout
 set ttimeoutlen=50
-
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" ~/.config/deinで
-" sh installer.sh .
-" したと仮定
-let deinroot = "~/.config/dein/."
-let $DEIN_PATH= deinroot . "/repos/github.com/Shougo/dein.vim"
-let s:toml = "~/.config/nvim/deim.toml"
-
-" Required:
-set runtimepath+=$DEIN_PATH
-
-" Required:
-if dein#load_state(deinroot)
-  call dein#begin(deinroot)
-  call dein#add($DEIN_PATH)
-  call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-let g:deoplete#enable_at_startup = 1
-
-"End dein Scripts-------------------------

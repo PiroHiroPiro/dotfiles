@@ -2,7 +2,7 @@
 alias ll="ls -lahG"
 
 # more alias for editor
-alias vi="vim"
+alias vim="nvim"
 alias emacs="vim"
 
 # more alias for vagrant
