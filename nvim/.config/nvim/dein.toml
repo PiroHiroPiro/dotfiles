@@ -15,15 +15,6 @@ hook_add = '''
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'MarSoft/nerdtree-grep-plugin'
-
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-
 [[plugins]] # color schema
 repo = 'w0ng/vim-hybrid'
 hook_add = '''

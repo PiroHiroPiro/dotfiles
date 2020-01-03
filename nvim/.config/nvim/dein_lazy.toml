@@ -1,0 +1,8 @@
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'MarSoft/nerdtree-grep-plugin'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
