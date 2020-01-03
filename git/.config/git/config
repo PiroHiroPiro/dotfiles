@@ -4,7 +4,7 @@
 [core]
   editor = nvim
 [commit]
-  template = $HOME/.config/git/commit_template
+	template = ~/.config/git/commit_template
 [alias]
   ignore = !"f() { local s=$1; shift; \
     while [ $# -gt 0 ]; do s=\"$s,$1\"; shift; done;\
