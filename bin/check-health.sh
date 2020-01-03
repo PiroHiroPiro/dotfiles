@@ -40,7 +40,7 @@ for file in ${NECESSARY_FILES[@]}; do \
 done
 
 echo "----- check optional root dotfiles -----"''
-OPTION_FILES=(.bash_aliases .zshrc .zsh_aliases .gitconfig .gitignore_global .commit_template .tmux.conf)
+OPTION_FILES=(.bash_aliases .zshrc .zsh_aliases .tmux.conf)
 for file in ${OPTION_FILES[@]}; do \
   check_file ~/$file warn
 done
@@ -70,6 +70,7 @@ else
   else
     check_file ~/.config/nvim/init.vim alert
     check_file ~/.config/nvim/dein.toml alert
+    check_file ~/.config/nvim/dein_lazy.toml alert
     check_file ~/.config/nvim/spell/en.utf-8.add warn
   fi
 
@@ -78,6 +79,15 @@ else
     alert "not exists ~/.config/dein"
   else
     check_file ~/.config/dein/installer.sh warn
+  fi
+
+  echo "----- check ~/.config/git -----"
+  if [ ! -d ~/.config/git ]; then
+    alert "not exists ~/.config/git"
+  else
+    check_file ~/.config/git/config alert
+    check_file ~/.config/git/ignore alert
+    check_file ~/.config/git/commit_template alert
   fi
 
   echo "----- check ~/.config/tmux -----"
