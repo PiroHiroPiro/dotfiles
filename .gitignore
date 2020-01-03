@@ -28,9 +28,9 @@ nvim/.config/dein/repos/
 !fish/.config/fish/config.fish
 !fish/.config/fish/functions/*.fish
 
-!git/.commit_template
-!git/.gitconfig
-!git/.gitignore_global
+!git/.config/git/commit_template
+!git/.config/git/config
+!git/.config/git/ignore
 
 !nvim/.config/nvim/init.vim
 !nvim/.config/nvim/dein.toml

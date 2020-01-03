@@ -2,10 +2,9 @@
   name = PiroHiroPiro
   email = hirohiro11071107@gmail.com
 [core]
-  excludesfile = ~/.gitignore_global
   editor = nvim
 [commit]
-  template = ~/.commit_template
+  template = $HOME/.config/git/commit_template
 [alias]
   ignore = !"f() { local s=$1; shift; \
     while [ $# -gt 0 ]; do s=\"$s,$1\"; shift; done;\
