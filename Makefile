@@ -23,7 +23,7 @@ zsh: brew ## install and setup zsh
 fish: brew ## install and setup fish
 	bash ./fish/bin/installer.sh
 
-git: ## setup git
+git: nvim ## setup git
 	bash ./git/bin/installer.sh
 
 nvim: brew ## install and setup neovim
