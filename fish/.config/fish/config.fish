@@ -81,7 +81,6 @@ alias lg="lazygit"
 alias t="tmux"
 
 # more alias for cd
-alias home="cd ~"
 alias dev="cd ~/dev"
 
 # tmux
