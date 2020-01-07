@@ -35,10 +35,10 @@ if dein#load_state(deinroot)
   " not installed python...
   " call dein#add('Shougo/deoplete.nvim')
 
-  " if !has('nvim')
-  "   call dein#add('roxma/nvim-yarp')
-  "   call dein#add('roxma/vim-hug-neovim-rpc')
-  " endif
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   call dein#end()
   call dein#save_state()
@@ -52,24 +52,6 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
-" Required:
-" https://github.com/mattn/vim-lsp-settings
-let g:lsp_settings_servers_dir = "~/langserver"
-
-" https://mattn.kaoriya.net/software/vim/20191231213507.htm
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 200
-let g:lsp_text_edit_enabled = 0
-
-" debug
-" https://qiita.com/succi0303/items/cd30d0ea40d419d4431c
-let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
-let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 """" shell """"
 " fish使ってるとエラー出ることがある

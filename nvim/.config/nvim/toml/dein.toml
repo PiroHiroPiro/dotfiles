@@ -17,7 +17,7 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]] # color schema
 repo = 'w0ng/vim-hybrid'
-hook_add = '''
+hook_post_source = '''
   colorscheme hybrid
   set background=dark
 '''

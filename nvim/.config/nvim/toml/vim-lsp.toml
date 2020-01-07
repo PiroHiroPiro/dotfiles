@@ -2,24 +2,39 @@
 
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
-
-[[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
-
-[[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
+hook_add = '''
+    let g:asyncomplete_auto_popup = 1
+    let g:asyncomplete_auto_completeopt = 0
+    let g:asyncomplete_popup_delay = 200
+'''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+    " https://mattn.kaoriya.net/software/vim/20191231213507.htm
+    let g:lsp_diagnostics_enabled = 1
+    let g:lsp_diagnostics_echo_cursor = 1
+    let g:lsp_text_edit_enabled = 0
+
+    " debug
+    " https://qiita.com/succi0303/items/cd30d0ea40d419d4431c
+    let g:lsp_log_verbose = 1
+    let g:lsp_log_file = expand('~/vim-lsp.log')
+    let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+'''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+hook_add = '''
+    " https://github.com/mattn/vim-lsp-settings
+    let g:lsp_settings_servers_dir = "~/langserver"
+'''
 
-[[plugins]]
-repo = 'mattn/vim-lsp-icons'
+#[[plugins]]
+#repo = 'mattn/vim-lsp-icons'
 
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip'
-
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
+#[[plugins]]
+#repo = 'hrsh7th/vim-vsnip'
+#repo = 'hrsh7th/vim-vsnip-integ'
