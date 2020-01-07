@@ -9,8 +9,8 @@ endif
 " sh installer.sh .
 " したと仮定
 let deinroot = "~/.config/dein/."
-let tomlroot = "~/.config/nvim/."
-let $DEIN_PATH= deinroot . "/repos/github.com/Shougo/dein.vim"
+let tomlroot = "~/.config/nvim/toml/."
+let $DEIN_PATH = deinroot . "/repos/github.com/Shougo/dein.vim"
 
 " Required:
 set runtimepath+=$DEIN_PATH
@@ -23,8 +23,14 @@ if dein#load_state(deinroot)
   " Required:
   call dein#add($DEIN_PATH)
 
+  " Required:
   call dein#load_toml(tomlroot . "/dein.toml", {'lazy': 0})
-  call dein#load_toml(tomlroot . "/dein_lazy.toml", {'lazy': 1})
+
+  " vim-lsp
+  call dein#load_toml(tomlroot . "/vim-lsp.toml", {'lazy': 0})
+
+  " nerdtree
+  call dein#load_toml(tomlroot . "/nerdtree.toml", {'lazy': 1})
 
   " not installed python...
   " call dein#add('Shougo/deoplete.nvim')
@@ -46,6 +52,18 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
+" Required:
+" https://github.com/mattn/vim-lsp-settings
+let g:lsp_settings_servers_dir = "~/langserver"
+
+" https://mattn.kaoriya.net/software/vim/20191231213507.htm
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_popup_delay = 200
+let g:lsp_text_edit_enabled = 0
 
 """" shell """"
 " fish使ってるとエラー出ることがある
@@ -145,6 +163,7 @@ set wildmode=full
 " マウス対応
 "set mouse=a
 "set ttymouse=xterm2
+" キーマップ
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
@@ -153,11 +172,19 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-" キーマップ
+
 nnoremap <ESC><ESC> :q<CR>
 nnoremap <C-p> :bPrev<CR>
 nnoremap <C-n> :bNext<CR>
+" nerdtree
 nnoremap <C-t> :NERDTreeToggle<CR>
+" lsp
+" nnoremap <silent> gd :LspDefinition<CR>
+" nnoremap <silent> <f2> :LspRename<CR>
+" nnoremap <silent> <Leader>d :LspTypeDefinition<CR>
+" nnoremap <silent> <Leader>r :LspReferences<CR>
+" nnoremap <silent> <Leader>i :LspImplementation<CR>
+
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 cmap w!! w !sudo tee > /dev/null %
 " インクリメンタルサーチ. 1文字入力毎に検索を行う

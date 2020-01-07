@@ -33,8 +33,9 @@ nvim/.config/dein/repos/
 !git/.config/git/ignore
 
 !nvim/.config/nvim/init.vim
-!nvim/.config/nvim/dein.toml
-!nvim/.config/nvim/dein_lazy.toml
+!nvim/.config/nvim/toml/dein.toml
+!nvim/.config/nvim/toml/nerdtree.toml
+!nvim/.config/nvim/toml/vim-lsp.toml
 !nvim/.config/nvim/spell/en.utf-8.add
 
 !tmux/.tmux.conf
