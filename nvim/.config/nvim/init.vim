@@ -65,6 +65,12 @@ let g:asyncomplete_auto_completeopt = 0
 let g:asyncomplete_popup_delay = 200
 let g:lsp_text_edit_enabled = 0
 
+" debug
+" https://qiita.com/succi0303/items/cd30d0ea40d419d4431c
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+
 """" shell """"
 " fish使ってるとエラー出ることがある
 " set shell=/bin/bash
