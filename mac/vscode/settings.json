@@ -1,8 +1,9 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "files.trimTrailingWhitespace": true,
     "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "editor.fontFamily": "FiraCode, Menlo, Monaco, 'Courier New', monospace",
-    "workbench.colorTheme": "SynthWave '84"
+    "workbench.colorTheme": "SynthWave '84",
+    "files.insertFinalNewline": true,
+    "editor.renderWhitespace": "all"
 }
