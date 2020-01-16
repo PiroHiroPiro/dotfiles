@@ -16,7 +16,7 @@ alias vp="vagrant provision"
 # more alias for docker
 alias d="docker"
 alias dc="docker-compose"
-alias drm="docker rm $(docker ps -f status=exited -q) & docker rmi $(docker images -f 'dangling=true' -q)"
+alias dsp="docker system prune"
 
 # more alias for kubernetes
 # alias k="kubectl"
