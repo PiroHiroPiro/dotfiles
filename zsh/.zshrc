@@ -66,7 +66,7 @@ if ! zplug check; then zplug install ;fi
 zplug load
 
 # enhancd
-ENHANCD_HOOK_AFTER_CD="k -a -h"
+ENHANCD_HOOK_AFTER_CD="k -ah"
 
 # spaceship-prompt
 export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "
