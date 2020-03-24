@@ -83,6 +83,10 @@ alias t="tmux"
 # more alias for cd
 alias dev="cd ~/dev"
 
+# qmk firmware
+set -x PATH /usr/local/opt/avr-gcc@7/bin $PATH
+set -x LDFLAGS -L/usr/local/opt/avr-gcc@7/lib
+
 # tmux
 if [ -z (echo $TMUX) ]
   tmux
