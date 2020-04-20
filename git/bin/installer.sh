@@ -4,7 +4,7 @@ echo "##### setup git #####"
 
 if [ -z $(which git) ]; then
   echo "----- install git -----"
-  xcode-select --install
+  brew install git
 fi
 
 echo "----- link git setting files -----"
