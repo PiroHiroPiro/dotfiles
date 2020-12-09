@@ -15,7 +15,7 @@ for file in ${LINK_FILES[@]}; do \
 done
 
 echo "----- install CLI -----"
-CLI_LIST=(hub lazygit)
+CLI_LIST=(gh lazygit)
 for cli in ${CLI_LIST[@]}; do \
   if [ -z $(which $cli) ]; then
     brew install $cli
