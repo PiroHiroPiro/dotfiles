@@ -17,7 +17,7 @@ clean: brew ## uninstall and unlink files
 bash: ## setup bash
 	bash ./bash/bin/installer.sh
 
-zsh: brew tmux ## install and setup zsh
+zsh: brew tmux terminal ## install and setup zsh
 	bash ./zsh/bin/installer.sh
 
 fish: brew ## install and setup fish

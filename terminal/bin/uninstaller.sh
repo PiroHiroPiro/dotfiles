@@ -32,7 +32,7 @@ if [ -n $(which procs) ]; then
   brew uninstall procs
 fi
 
-if [ -n $(which ripgrep) ]; then
+if [ -n $(which rg) ]; then
   echo "----- uninstall ripgrep -----"
   brew uninstall ripgrep
 fi
