@@ -22,4 +22,9 @@ if [ -n $(which exa) ]; then
   brew uninstall exa
 fi
 
+if [ -n $(which fd) ]; then
+  echo "----- uninstall fd -----"
+  brew uninstall fd
+fi
+
 echo "##### uninstall to setup CLI #####"

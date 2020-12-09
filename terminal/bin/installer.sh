@@ -23,4 +23,9 @@ if [ -z $(which exa) ]; then
   brew install exa
 fi
 
+if [ -z $(which fd) ]; then
+  echo "----- install fd -----"
+  brew install fd
+fi
+
 echo "##### finish to setup CLI #####"
