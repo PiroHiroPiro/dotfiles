@@ -27,4 +27,9 @@ if [ -n $(which fd) ]; then
   brew uninstall fd
 fi
 
+if [ -n $(which procs) ]; then
+  echo "----- uninstall procs -----"
+  brew uninstall procs
+fi
+
 echo "##### uninstall to setup CLI #####"

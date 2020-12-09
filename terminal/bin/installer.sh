@@ -28,4 +28,9 @@ if [ -z $(which fd) ]; then
   brew install fd
 fi
 
+if [ -z $(which procs) ]; then
+  echo "----- install procs -----"
+  brew install procs
+fi
+
 echo "##### finish to setup CLI #####"
