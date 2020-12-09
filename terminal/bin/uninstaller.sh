@@ -7,4 +7,9 @@ if [ -n $(which k9s) ]; then
   brew uninstall derailed/k9s/k9s
 fi
 
+if [ -n $(which docui) ]; then
+  echo "----- uninstall docui -----"
+  brew uninstall docui
+fi
+
 echo "##### uninstall to setup CLI #####"
