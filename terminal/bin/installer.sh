@@ -12,4 +12,10 @@ if [ -z $(which docui) ]; then
   brew install docui
 fi
 
+if [ -z $(which duf) ]; then
+  echo "----- install duf -----"
+  brew tap muesli/tap
+  brew install duf
+fi
+
 echo "##### finish to setup CLI #####"

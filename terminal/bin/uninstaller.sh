@@ -12,4 +12,9 @@ if [ -n $(which docui) ]; then
   brew uninstall docui
 fi
 
+if [ -n $(which duf) ]; then
+  echo "----- uninstall duf -----"
+  brew uninstall duf
+fi
+
 echo "##### uninstall to setup CLI #####"
