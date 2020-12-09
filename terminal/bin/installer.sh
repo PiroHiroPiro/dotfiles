@@ -33,4 +33,9 @@ if [ -z $(which procs) ]; then
   brew install procs
 fi
 
+if [ -z $(which ripgrep) ]; then
+  echo "----- install ripgrep -----"
+  brew install ripgrep
+fi
+
 echo "##### finish to setup CLI #####"
