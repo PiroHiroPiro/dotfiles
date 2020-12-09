@@ -18,4 +18,9 @@ if [ -z $(which duf) ]; then
   brew install duf
 fi
 
+if [ -z $(which exa) ]; then
+  echo "----- install exa -----"
+  brew install exa
+fi
+
 echo "##### finish to setup CLI #####"

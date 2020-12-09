@@ -17,4 +17,9 @@ if [ -n $(which duf) ]; then
   brew uninstall duf
 fi
 
+if [ -n $(which exa) ]; then
+  echo "----- uninstall exa -----"
+  brew uninstall exa
+fi
+
 echo "##### uninstall to setup CLI #####"
