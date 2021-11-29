@@ -22,4 +22,8 @@ for cli in ${CLI_LIST[@]}; do \
   fi
 done
 
+echo "----- install CLI extension -----"
+
+gh extension install dlvhdr/gh-prs
+
 echo "##### finish to setup git #####"
