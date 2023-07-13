@@ -10,9 +10,7 @@ for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null; \
 done
 
-if [ -e ~/Library/Fonts/FiraCode-Regular.ttf ]; then
-  rm -f ~/Library/Fonts/FiraCode-Regular.ttf
-fi
+brew uninstall --cask font-fira-code
 
 rm -rf ~/.config/dein/.cache
 rm -rf ~/.config/dein/cache_nvim
