@@ -27,11 +27,8 @@ echo "----- install dein.vim -----"
 if [ -d ~/.config/dein/repos/github.com/Shougo/dein.vim/ ]; then
   echo "dein.vim is already installed"
 else
-  if [ ! -f ~/.config/dein/installer.sh ]; then
-    echo "install dein installer.sh"
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/.config/dein/installer.sh
-  fi
-  bash ~/.config/dein/installer.sh ~/.config/dein/ &>/dev/null
+  echo "install dein"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 fi
 
 echo "##### finish to setup neovim #####"
