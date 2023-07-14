@@ -74,5 +74,5 @@ echo "Rebooting is necessary to reflect the setting."
 read -p "Would you like to reboot now?: (y/N)" yn
 case "$yn" in [yY]*) ;; *) echo "Terminate setup macos." ; exit 1 ;; esac
 
-# Sudo reboot (再起動して設定を反映させる)
+# sudo reboot (再起動して設定を反映させる)
 sudo reboot
