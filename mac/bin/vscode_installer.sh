@@ -4,7 +4,7 @@ echo "##### setup vscode #####"
 
 if [ -z $(which code) ]; then
   echo "----- install vscode -----"
-  brew cask install visual-studio-code
+  brew install visual-studio-code --cask
 fi
 
 echo "----- link vscode setting files -----"
