@@ -33,7 +33,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Please run the following command: make help"
+echo "Please run the following command: cd ~/dotfiles; make help"
 
 # 終了
 exit 0

@@ -3,8 +3,12 @@
 echo "##### install font #####"
 
 echo "----- install FiraCode -----"
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
+if [ -e ~/Library/Fonts/FiraCode-Medium.ttf ]; then
+  echo "FiraCode already exists"
+else
+  brew tap homebrew/cask-fonts
+  brew install --cask font-fira-code
+fi
 
 echo "----- install PowerLine fonts -----"
 if [ -z "$(ls ~/Library/Fonts/ | grep powerline)" ]; then
