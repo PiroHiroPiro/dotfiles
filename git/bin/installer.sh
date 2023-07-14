@@ -8,6 +8,11 @@ if [ -z $(which git) ]; then
 fi
 
 echo "----- link git setting files -----"
+if [ ! -d ~/.config ]; then
+  echo "create ~/.config directory"
+  mkdir ~/.config
+fi
+
 LINK_FILES=(.config/git)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
