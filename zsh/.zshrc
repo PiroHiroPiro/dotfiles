@@ -70,12 +70,5 @@ ENHANCD_HOOK_AFTER_CD="exa -aaF"
 export SPACESHIP_CHAR_SYMBOL="%(?.>><(( o>.>><(( x>) "
 export SPACESHIP_DIR_TRUNC_REPO=false
 
-# git
-export PATH="/usr/local/bin:$PATH"
-
-# qmk firmware
-export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/avr-gcc@7/lib"
-
 # tmux
 source ~/.config/zsh/tmux.zsh
