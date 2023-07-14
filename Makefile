@@ -1,7 +1,7 @@
 .PHONY: help init clean bash zsh fish git nvim tmux terminal mac health
 .DEFAULT_GOAL := help
 
-init: bash zsh git nvim tmux terminal mac ## setup bash zsh git neovim tmux terminal mac
+init: bash zsh git nvim tmux terminal ## setup bash zsh git neovim tmux terminal
 
 brew: ## install homebrew
 	bash ./bin/install-brew.sh
