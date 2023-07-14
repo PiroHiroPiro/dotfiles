@@ -28,8 +28,12 @@ if [ -d ~/.config/dein/repos/github.com/Shougo/dein.vim/ ]; then
   echo "dein.vim is already installed"
 else
   echo "install dein"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
-
+  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
+  curl -o $(pwd)/installer.sh -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh
+  chmod +x $(pwd)/installer.sh
+  sh $(pwd)/installer.sh --use-neovim-config
+  rm $(pwd)/installer.sh
+  
   # overwrite file after installation dein
   rm -f ~/.config/nvim/init.vim
   mv ~/.config/nvim/init.vim.pre-dein-vim ~/.config/nvim/init.vim
