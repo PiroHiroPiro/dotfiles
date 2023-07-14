@@ -31,12 +31,8 @@ else
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 
   # overwrite file after installation dein
-  rm -f ~/.config/nvim/init.vim ~/.config/nvim/init.vim.pre-dein-vim&>/dev/null
-  LINK_FILES=(.config/nvim/init.vim)
-  for file in ${LINK_FILES[@]}; do \
-    unlink ~/$file&>/dev/null
-    ln -sf $(pwd)/nvim/$file ~/$file; \
-  done
+  rm -f ~/.config/nvim/init.vim
+  mv ~/.config/nvim/init.vim.pre-dein-vim ~/.config/nvim/init.vim
 fi
 
 echo "##### finish to setup neovim #####"
