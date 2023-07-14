@@ -13,6 +13,11 @@ if [ ! -d ~/.zplug ]; then
 fi
 
 echo "----- link zsh setting files -----"
+if [ ! -d ~/.config ]; then
+  echo "create ~/.config directory"
+  mkdir ~/.config
+fi
+
 LINK_FILES=(.zshrc .zsh_aliases .config/zsh)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
