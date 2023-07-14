@@ -7,11 +7,6 @@ if [ -z $(which k9s) ]; then
   brew install derailed/k9s/k9s
 fi
 
-if [ -z $(which docui) ]; then
-  echo "----- install docui -----"
-  brew install docui
-fi
-
 if [ -z $(which duf) ]; then
   echo "----- install duf -----"
   brew tap muesli/tap
