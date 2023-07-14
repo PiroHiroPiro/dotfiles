@@ -33,8 +33,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# 移動できたら make を実行する
-make init
+echo "Please run the following command: make help"
 
 # 終了
 exit 0
