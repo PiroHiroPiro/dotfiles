@@ -8,6 +8,9 @@ if [ -d $DOTPATH ]; then
   rm -rf $DOTPATH
 fi
 
+# git / make のインストール
+xcode-select --install
+
 # git が使えるなら git
 if [ -n $(which git) ]; then
   git clone --recursive "https://github.com/PiroHiroPiro/dotfiles.git" $DOTPATH
@@ -28,11 +31,6 @@ cd ${DOTPATH}
 if [ $? -ne 0 ]; then
   echo "not found: ${DOTPATH}"
   exit 1
-fi
-
-# make の確認
-if [ -z $(which make) ]; then
-  xcode-select --install
 fi
 
 # 移動できたら make を実行する
