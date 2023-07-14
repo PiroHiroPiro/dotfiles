@@ -3,13 +3,8 @@
 echo "##### install font #####"
 
 echo "----- install FiraCode -----"
-if [ -e ~/Library/Fonts/FiraCode-Medium.ttf ]; then
-  echo "FiraCode already exists"
-else
-  git clone git@github.com:tonsky/FiraCode.git
-  cp FiraCode/distr/ttf/FiraCode-Medium.ttf ~/Library/Fonts/
-  rm -rf FiraCode
-fi
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
 
 echo "----- install PowerLine fonts -----"
 if [ -z "$(ls ~/Library/Fonts/ | grep powerline)" ]; then
