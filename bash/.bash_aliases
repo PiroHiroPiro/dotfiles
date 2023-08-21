@@ -24,11 +24,10 @@ alias dsp="docker system prune"
 # more alias for git
 alias g="git"
 alias gb="git branch"
-alias gc="git checkout"
 alias gd="git diff"
 alias gs="git status"
-alias gcm="git checkout master"
-alias gpom="git pull origin master"
+alias gcm="git checkout main"
+alias gpom="git pull origin main"
 
 # more alias for lazygit
 alias lg="lazygit"
