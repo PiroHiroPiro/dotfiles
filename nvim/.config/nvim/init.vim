@@ -10,7 +10,7 @@ endif
 " ~/install.shで
 " sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 " したと仮定
-let $DEIN_ROOT = "~/.config/dein/."
+let $DEIN_ROOT = "~/.cache/dein"
 let $DEIN_PATH= $DEIN_ROOT . "/repos/github.com/Shougo/dein.vim"
 let tomlroot = "~/.config/nvim/toml/."
 
