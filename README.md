@@ -5,7 +5,7 @@ dotfiles for macOS
 ## Setup
 
 ```shell
-$ curl -sSL https://raw.githubusercontent.com/PiroHiroPiro/dotfiles/master/install.sh | sh
+$ curl -sSL https://raw.githubusercontent.com/PiroHiroPiro/dotfiles/main/install.sh | sh
 ```
 
 ## References
