@@ -13,9 +13,9 @@ if [ -z $(which duf) ]; then
   brew install duf
 fi
 
-if [ -z $(which exa) ]; then
-  echo "----- install exa -----"
-  brew install exa
+if [ -z $(which eza) ]; then
+  echo "----- install eza -----"
+  brew install eza
 fi
 
 if [ -z $(which fd) ]; then

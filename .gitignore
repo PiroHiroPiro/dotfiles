@@ -24,6 +24,7 @@ nvim/.config/dein/repos/
 !zsh/.zsh_aliases
 !zsh/.zshrc
 !zsh/.config/zsh/tmux.zsh
+!zsh/.config/spaceship-prompt/spaceship.zsh
 
 !fish/.config/fish/config.fish
 !fish/.config/fish/functions/*.fish

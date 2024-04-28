@@ -18,7 +18,7 @@ if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
 
-LINK_FILES=(.zshrc .zsh_aliases .config/zsh)
+LINK_FILES=(.zshrc .zsh_aliases .config/zsh .config/spaceship-prompt)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
   ln -sf $(pwd)/zsh/$file ~/$file; \
