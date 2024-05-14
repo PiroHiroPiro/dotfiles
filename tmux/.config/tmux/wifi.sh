@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/zsh
 #
 # @(#) wifi v0.2.0 2015-09-24
 #
@@ -15,25 +15,10 @@
 #
 # ▁▂▃▅▇
 
-# . "$DOTPATH"/etc/lib/vital.sh
-
 # if ! is_osx; then
 #     echo "wifi: require OS X" 1>&2
 #     exit 1
 # fi
-
-# Check arguments
-# for arg in "$@"
-# do
-#     # Check if arguments have help option
-#     if [[ "$arg" =~ ^"-h"|"--help"$ ]]; then
-#         cat 1>&2 <<-'EOH'
-# usage: wifi [-h|--help]
-#     show the wifi information (strength, bandwidth, SSID)
-# EOH
-#         exit 1
-#     fi
-# done
 
 # airport command is executable file
 #
@@ -52,13 +37,6 @@
 #                                     --ssid=<arg>      Specify SSID when creating a PSK
 #    -h        --help               Show this help
 #
-airport_path="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
-
-# Check if airport is available
-if [[ ! -x $airport_path ]]; then
-  echo "$airport_path: not found" 1>&2
-  exit 1
-fi
 
 # The Unicode Block Elements
 # | Unicode | Block |           Name             |    Note    |
@@ -83,58 +61,51 @@ fi
 #
 signals=(▂ ▅ ▇)
 
-# Get the wifi information and then set it to an info array
-info=( $(eval "$airport_path" --getinfo | grep -E "^ *(agrCtlRSSI|state|lastTxRate|SSID):" | awk '{print $2}') )
+# Get the wifi information
+info=$(system_profiler SPAirPortDataType)
 if [[ ${#info[@]} -eq 0 ]]; then
-  echo "offline"
-  exit 1
+    echo "offline"
+    exit 1
 fi
 
 # cut out a needed information from the info
-# reference: http://osxdaily.com/2007/01/18/airport-the-little-known-command-line-wireless-utility/
-rssi="${info[0]}"   # strength of wifi wave
-stat="${info[1]}"   # whether wifi is available
-rate="${info[2]}"   # bandwidth of wifi wave
-ssid="${info[3]}"   # wifi ssid name
+ssid=$(echo $info | awk '/Current Network Information:/{getline; gsub(/^ +|:$/, ""); print $0; exit}')   # wifi ssid name
+rssi=$(echo $info | awk '/Signal \/ Noise:/{gsub(/ dBm/, ""); print $4; exit}')                          # strength of wifi wave
+rate=$(echo $info | awk '/Transmit/' | sed 's/[^0-9]//g')                                                # bandwidth of wifi wave
 
 # Determine the signal from rssi of wifi
 signal=""
-for ((j = 0; j < "${#signals[@]}"; j++))
+j=1
+# for ((j = 1; j <= "${#signals[@]}"; j++))
+while (( $j <= $#signals ))
 do
-  # reference of strength (rssi)
-  #  -20　Excellent
-  #  -30　Excellent
-  #  -40　Excellent
-  #  -50　Excellent
-  #  -60　better
-  #  -70　good
-  #  -80　not good
-  #  -90　bad
-  # -100　bad
-  if ((  $j == 0 && $rssi > -100 )) ||
-    (( $j == 1 && $rssi > -80  )) ||
-    (( $j == 2 && $rssi > -50  )); then
-    # make signal
-    signal="${signal}${signals[$j]} "
-  else
-    signal="${signal}  "
-  fi
+    # reference of strength (rssi)
+    #  -20　Excellent
+    #  -30　Excellent
+    #  -40　Excellent
+    #  -50　Excellent
+    #  -60　better
+    #  -70　good
+    #  -80　not good
+    #  -90　bad
+    # -100　bad
+    if ((  $j == 1 && $rssi > -100 )) ||
+        (( $j == 2 && $rssi > -80  )) ||
+        (( $j == 3 && $rssi > -50  )); then
+        # make signal
+        signal="${signal}${signals[$j]} "
+    else
+        signal="${signal}  "
+    fi
+    (( j++ ))
 done
 
 # If the wifi rate (wifi bandwidth) is unavailable,
 if [ "$rate" = 0 ]; then
-  echo "no_wifi"
-  exit 1
-fi
-
-MAX_LENGTH=10
-
-# もしMAX_LENGTHより長ければ省略
-if (( ${#ssid} > $MAX_LENGTH )); then
-  ssid="${ssid:0:MAX_LENGTH}..."
+    echo "no_wifi"
+    exit 1
 fi
 
 # Outputs wifi
 #   example: "fun-wifi 351Mbs ▂ ▅   "
-# echo -e "${ssid} ${rate}Mbs ${signal}"
-echo -e "${ssid} ${rate}Mbs"
+print "${ssid} ${rate}Mbs ${signal}"
