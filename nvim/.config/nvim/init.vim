@@ -34,7 +34,7 @@ if dein#load_state($DEIN_ROOT)
 
   " Your plugins go here:
   call dein#load_toml(tomlroot . "/dein.toml", {'lazy': 0})
-  call dein#load_toml(tomlroot . "/dein_lazy.toml", {'lazy': 1})
+  " call dein#load_toml(tomlroot . "/dein_lazy.toml", {'lazy': 1})
 
   " vim-lsp
   call dein#load_toml(tomlroot . "/vim-lsp.toml", {'lazy': 0})
