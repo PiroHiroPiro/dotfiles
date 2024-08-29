@@ -69,5 +69,8 @@ ENHANCD_HOOK_AFTER_CD="eza -aaF"
 # spaceship-prompt
 export SPACESHIP_CONFIG="$HOME/.config/spaceship-prompt/spaceship.zsh"
 
+# zsh
+source <(fzf --zsh)
+
 # tmux
 source ~/.config/zsh/tmux.zsh
